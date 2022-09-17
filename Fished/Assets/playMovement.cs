@@ -5,6 +5,7 @@ using UnityEngine;
 public class playMovement : MonoBehaviour
 {
     public Rigidbody rb;
+    public float moveSpeed = 15;
 
     float forwardMove = 0;
     float sideMove = 0;
@@ -22,6 +23,6 @@ public class playMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(sideMove, rb.velocity.y, forwardMove);
+        rb.velocity = new Vector3(sideMove * moveSpeed * 0.4f, rb.velocity.y, forwardMove * moveSpeed);
     }
 }
